@@ -1,53 +1,40 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Racine du projet (dépend du chemin d'exécution)
+# ============================================================
+#  Mint Post-Install – Script principal
+# ============================================================
+
+# 1. Détection de la racine du projet
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# Chargement des utilitaires
+# 2. Chargement des utilitaires
 source "$ROOT_DIR/utils/colors.sh"
 source "$ROOT_DIR/utils/logging.sh"
 source "$ROOT_DIR/utils/checks.sh"
 source "$ROOT_DIR/utils/config-loader.sh"
 
-# Detection du mode Automatique 
+# 3. Détection du mode automatique
 if [[ -f "$ROOT_DIR/config.yml" ]]; then
     AUTO_MODE=true
 else
     AUTO_MODE=false
 fi
 
-# Vérifications préalables
+# 4. Vérifications système
 check_root
 check_distro
 detect_hardware
 
-# Chargement des modules
+# 5. Définition des chemins des modules
 CORE_DIR="$ROOT_DIR/core"
 SECURITY_DIR="$ROOT_DIR/security"
 APPS_DIR="$ROOT_DIR/apps"
 NETWORK_DIR="$ROOT_DIR/network"
 
-show_main_menu() {
-    echo -e "${BOLD}${CYAN}=== Mint Post-Install ===${RESET}"
-    echo "1) Core (système, mises à jour, drivers, cleanup)"
-    echo "2) Sécurité (firewall, hardening, AppArmor, audit)"
-    echo "3) Applications (dev, multimédia, office, navigateurs)"
-    echo "4) Réseau (DNS, VPN, Wi-Fi)"
-    echo "5) Tout exécuter"
-    echo "0) Quitter"
-    echo
-    read -rp "Choix: " choice
-    case "$choice" in
-        1) run_core ;;
-        2) run_security ;;
-        3) run_apps ;;
-        4) run_network ;;
-        5) run_all ;;
-        0) log_info "Sortie."; exit 0 ;;
-        *) log_error "Choix invalide."; show_main_menu ;;
-    esac
-}
+# ============================================================
+#  Fonctions d’exécution des modules
+# ============================================================
 
 run_core() {
     log_section "Core"
@@ -87,8 +74,65 @@ run_all() {
     run_network
 }
 
-# Choix du mode d'exécution 
+# ============================================================
+#  Mode automatique (lecture de config.yml)
+# ============================================================
+
+run_automatic_mode() {
+    log_section "Mode automatique activé (config.yml détecté)"
+
+    # Modules principaux
+    if is_enabled "modules_core_enabled"; then
+        run_core
+    fi
+
+    if is_enabled "modules_security_enabled"; then
+        run_security
+    fi
+
+    if is_enabled "modules_apps_enabled"; then
+        run_apps
+    fi
+
+    if is_enabled "modules_network_enabled"; then
+        run_network
+    fi
+
+    log_info "Mode automatique terminé."
+}
+
+# ============================================================
+#  Menu interactif
+# ============================================================
+
+show_main_menu() {
+    echo -e "${BOLD}${CYAN}=== Mint Post-Install ===${RESET}"
+    echo "1) Core (système, mises à jour, drivers, cleanup)"
+    echo "2) Sécurité (firewall, hardening, AppArmor, audit)"
+    echo "3) Applications (dev, multimédia, office, navigateurs)"
+    echo "4) Réseau (DNS, VPN, Wi-Fi)"
+    echo "5) Tout exécuter"
+    echo "0) Quitter"
+    echo
+    read -rp "Choix: " choice
+
+    case "$choice" in
+        1) run_core ;;
+        2) run_security ;;
+        3) run_apps ;;
+        4) run_network ;;
+        5) run_all ;;
+        0) log_info "Sortie."; exit 0 ;;
+        *) log_error "Choix invalide."; show_main_menu ;;
+    esac
+}
+
+# ============================================================
+#  Exécution finale
+# ============================================================
+
 if [[ "$AUTO_MODE" == true ]]; then
-    run_automatic_mode   # si tu ajoutes cette fonction
+    run_automatic_mode
 else
     show_main_menu
+fi
