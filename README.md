@@ -1,14 +1,14 @@
 Projet de post‑installation 
 > Pour `Linux Mint`
-- framework d’optimisation générale,
-- adapter à ton usage réel et aux menaces modernes,
+- `framework` d’optimisation générale,
+- adapter à un usage réel et aux menaces modernes,
 - projet modulaire, propre, maintenable,
 - package et ensemble de scripts versionnés.
 
 ---
 
 🎯 Objectif du projet
-> Créer un ensemble de scripts capables de :
+> Créer un ensemble de `scripts` capables de :
 - configurer automatiquement un système Linux Mint fraîchement installé ;
 - appliquer des optimisations selon ton profil d’utilisateur (développement, sécurité, multimédia, réseau, etc.) ;
 - renforcer la sécurité face aux menaces actuelles (phishing, ransomware, supply‑chain, attaques réseau, fuites de données) ;
