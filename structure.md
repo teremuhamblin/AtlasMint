@@ -37,6 +37,14 @@
 
 ---
 
+🛡️ Modules de sécurité essentiels
+<div/>
+Les menaces actuelles évoluent vite :
+  
+- supply‑chain, attaques via navigateur,
+- scripts malveillants, exfiltration réseau, etc,
+> Un bon post‑install doit couvrir plusieurs couches
+
 🔐 1. Durcissement du système
 - Activation stricte du pare‑feu UFW  
 - Configuration AppArmor  
