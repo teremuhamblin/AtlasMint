@@ -109,7 +109,8 @@ Un fichier utils/logging.sh pour tracer chaque action.
 - CONTRIBUTING
 - CODE_OF_CONDUCT
 - CHANGELOG  
-- LICENSE 
+- LICENSE
+- SUPPORT
 
 # 🚀 Vision long terme
 > Ton projet peut devenir :
