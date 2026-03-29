@@ -30,43 +30,6 @@
 - renforcer la sécurité face aux menaces actuelles (phishing, ransomware, supply‑chain, attaques réseau, fuites de données) ;
 - rester simple à maintenir, modulaire et évolutif.
 
-🧩 Structure générale du projet
-Une architecture modulaire t’aidera à garder un projet propre et professionnel.
-
-📁 Arborescence recommandée
-`
-mint-postinstall/
-│── core/
-│   ├── system.sh
-│   ├── updates.sh
-│   ├── drivers.sh
-│   └── cleanup.sh
-│
-│── security/
-│   ├── firewall.sh
-│   ├── hardening.sh
-│   ├── apparmor.sh
-│   └── audit.sh
-│
-│── apps/
-│   ├── dev-tools.sh
-│   ├── multimedia.sh
-│   ├── office.sh
-│   └── browsers.sh
-│
-│── network/
-│   ├── dns.sh
-│   ├── vpn.sh
-│   └── wifi.sh
-│
-│── utils/
-│   ├── logging.sh
-│   ├── colors.sh
-│   └── checks.sh
-│
-└── install.sh
-`
-
 🛡️ Modules de sécurité essentiels
 Les menaces actuelles évoluent vite : supply‑chain, attaques via navigateur, scripts malveillants, exfiltration réseau, etc. Un bon post‑install doit couvrir plusieurs couches.
 
