@@ -1,0 +1,176 @@
+# ============================================================
+#  Mint Post-Install – Configuration automatique
+#  Profil : "full-secure-dev"
+#  Description : Post-installation complète orientée sécurité,
+#                développement, durcissement système et réseau.
+# ============================================================
+
+profile:
+  name: "full-secure-dev"
+  description: "Configuration complète : sécurité renforcée, outils développeur, navigateurs durcis, DNS sécurisés, VPN, optimisation système."
+  version: "1.0.0"
+  author: "Teremu"
+
+# ------------------------------------------------------------
+#  Modules à exécuter automatiquement
+# ------------------------------------------------------------
+modules:
+  core:
+    enabled: true
+    system: true
+    updates: true
+    drivers: true
+    cleanup: true
+
+  security:
+    enabled: true
+    firewall: true
+    hardening: true
+    apparmor: true
+    audit: true
+
+  apps:
+    enabled: true
+    dev_tools: true
+    multimedia: false
+    office: true
+    browsers: true
+
+  network:
+    enabled: true
+    dns: true
+    vpn: true
+    wifi: true
+
+# ------------------------------------------------------------
+#  Paramètres de sécurité avancés
+# ------------------------------------------------------------
+security:
+  firewall:
+    allow_ssh: false
+    allow_http: false
+    allow_https: false
+
+  hardening:
+    disable_services:
+      - avahi-daemon
+      - cups
+      - bluetooth
+      - rpcbind
+    sysctl:
+      kernel.kptr_restrict: 2
+      fs.protected_hardlinks: 1
+      fs.protected_symlinks: 1
+      kernel.yama.ptrace_scope: 1
+      net.ipv4.conf.all.rp_filter: 1
+      net.ipv4.conf.default.rp_filter: 1
+
+  apparmor:
+    enforce_all: true
+
+  audit:
+    lynis_level: "full"
+
+# ------------------------------------------------------------
+#  Applications
+# ------------------------------------------------------------
+apps:
+  dev_tools:
+    languages:
+      - nodejs
+      - python3
+      - rust
+    tools:
+      - git
+      - docker
+      - podman
+      - build-essential
+    editors:
+      - vscode
+      - neovim
+
+  browsers:
+    install:
+      - firefox
+      - brave
+      - librewolf
+    firefox_hardening:
+      arkenfox: true
+      extensions:
+        - ublock-origin
+        - clearurls
+        - noscript
+
+  office:
+    suite: "libreoffice"
+    language_pack: "fr"
+
+# ------------------------------------------------------------
+#  Réseau
+# ------------------------------------------------------------
+network:
+  dns:
+    provider: "quad9"
+    servers:
+      - "9.9.9.9"
+      - "149.112.112.112"
+    fallback:
+      - "1.1.1.2"
+      - "1.0.0.2"
+
+  vpn:
+    provider: "wireguard"
+    auto_enable: false
+    config_path: "/etc/wireguard/wg0.conf"
+
+  wifi:
+    auto_scan: true
+
+# ------------------------------------------------------------
+#  Sauvegardes & données
+# ------------------------------------------------------------
+backup:
+  timeshift:
+    enabled: true
+    mode: "rsync"
+    schedule: "daily"
+  encryption:
+    encrypt_home: false
+    encrypt_sensitive_dirs:
+      - "~/Documents"
+      - "~/Projects"
+
+# ------------------------------------------------------------
+#  Optimisations système
+# ------------------------------------------------------------
+optimization:
+  boot:
+    analyze: true
+    disable_services:
+      - snapd
+      - motd-news
+  apt:
+    autoremove: true
+    autoclean: true
+  journald:
+    retention: "7d"
+
+# ------------------------------------------------------------
+#  Matériel
+# ------------------------------------------------------------
+hardware:
+  gpu:
+    optimize:
+      intel: true
+      amd: true
+      nvidia: false
+  cpu:
+    governor: "performance"
+
+# ------------------------------------------------------------
+#  Mode silencieux / non-interactif
+# ------------------------------------------------------------
+automation:
+  non_interactive: true
+  confirm_actions: false
+  logging: "verbose"
