@@ -15,20 +15,22 @@
 
 ---
 
-> Pour `Linux Mint`
+> Performance et But du projet
 - `framework` d’optimisation générale,
-- adapter à un usage réel et aux menaces modernes,
-- projet modulaire, propre, maintenable,
-- package et ensemble de scripts versionnés.
+- adapter à un usage réel et aux `menaces` modernes,
+- projet `modulaire`, propre, maintenable,
+- package et ensemble de `scripts versionnés`.
 
 ---
 
+<p align="center">
 🎯 Objectif du projet
+</p>
+
 > Créer un ensemble de `scripts` capables de :
-- configurer automatiquement un système Linux Mint fraîchement installé ;
-- appliquer des optimisations selon ton profil d’utilisateur (développement, sécurité, multimédia, réseau, etc.) ;
-- renforcer la sécurité face aux menaces actuelles (phishing, ransomware, supply‑chain, attaques réseau, fuites de données) ;
+- configurer automatiquement un système `Linux Mint` installé ;
+- appliquer des `optimisations` selon ton profil d’utilisateur (développement, sécurité, multimédia, réseau, etc.) ;
+- renforcer la sécurité face aux menaces actuelles (`phishing, ransomware, supply‑chain, attaques réseau, fuites de données`) ;
 - rester simple à maintenir, modulaire et évolutif.
 
-🛡️ Modules de sécurité essentiels
-Les menaces actuelles évoluent vite : supply‑chain, attaques via navigateur, scripts malveillants, exfiltration réseau, etc. Un bon post‑install doit couvrir plusieurs couches.
+---
