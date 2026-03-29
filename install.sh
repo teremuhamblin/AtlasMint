@@ -8,6 +8,14 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$ROOT_DIR/utils/colors.sh"
 source "$ROOT_DIR/utils/logging.sh"
 source "$ROOT_DIR/utils/checks.sh"
+source "$ROOT_DIR/utils/config-loader.sh"
+
+# Detection du mode Automatique 
+if [[ -f "$ROOT_DIR/config.yml" ]]; then
+    AUTO_MODE=true
+else
+    AUTO_MODE=false
+fi
 
 # Vérifications préalables
 check_root
@@ -79,4 +87,8 @@ run_all() {
     run_network
 }
 
-show_main_menu
+# Choix du mode d'exécution 
+if [[ "$AUTO_MODE" == true ]]; then
+    run_automatic_mode   # si tu ajoutes cette fonction
+else
+    show_main_menu
