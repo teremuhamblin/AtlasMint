@@ -1,4 +1,18 @@
-Projet de post‑installation 
+> AtlasMint - README.md
+(`markdown`)
+
+<p align="center">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:1a1a2e,50:16213e,100:0f3460&height=200&section=header&text=AtlasMint+-+LINUX&fontSize=52&fontColor=ffffff&fontAlignY=32&desc=Post-INSTALL,+Post-LOG,+Mint+ÉDITION&descAlignY=53&descColor=a8b2d8&animation=fadeIn" width="100%"/>
+
+<br/>
+
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=24&duration=4200&pause=760&color=58A6FF&center=true&vCenter=true&multiline=false&width=580&lines=Armée+de+terre+-+RTSO;11ème+Brigade+Parachutiste+-+2ème+REP;Opérateur+de+Renseignement+du+GCP)](https://git.io/typing-svg)
+
+<br/>
+
+### @ themaddog.tmdg@protonmail.com
+![Status](https://img.shields.io/badge/Status-ACTIF-%23ff6f61)
+</div>
 > Pour `Linux Mint`
 - `framework` d’optimisation générale,
 - adapter à un usage réel et aux menaces modernes,
