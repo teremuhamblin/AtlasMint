@@ -29,7 +29,7 @@
 
 > Créer un ensemble de `scripts` capables de :
 - configurer automatiquement un système `Linux Mint` installé ;
-- appliquer des `optimisations` selon ton profil d’utilisateur (développement, sécurité, multimédia, réseau, etc.) ;
+- appliquer des `optimisations` selon le profil d’utilisateur (développement, sécurité, multimédia, réseau, etc.) ;
 - renforcer la sécurité face aux menaces actuelles (`phishing, ransomware, supply‑chain, attaques réseau, fuites de données`) ;
 - rester simple à maintenir, modulaire et évolutif.
 
