@@ -6,13 +6,15 @@
 
 <br/>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=24&duration=4200&pause=760&color=58A6FF&center=true&vCenter=true&multiline=false&width=580&lines=Armée+de+terre+-+RTSO;11ème+Brigade+Parachutiste+-+2ème+REP;Opérateur+de+Renseignement+du+GCP)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=24&duration=4200&pause=760&color=58A6FF&center=true&vCenter=true&multiline=false&width=580&lines=Amélioration+du+système+d'exploitation;Script+d'installation+PostINSTALL;Optimisation,+Sécurisation,+Performance)](https://git.io/typing-svg)
 
 <br/>
 
-### @ themaddog.tmdg@protonmail.com
 ![Status](https://img.shields.io/badge/Status-ACTIF-%23ff6f61)
 </div>
+
+---
+
 > Pour `Linux Mint`
 - `framework` d’optimisation générale,
 - adapter à un usage réel et aux menaces modernes,
@@ -137,7 +139,6 @@ Ton projet peut devenir :
 - un framework complet de post-installation pour Linux Mint ;
 - un outil de durcissement automatisé ;
 - un projet open-source utile à la communauté Mint francophone ;
-- un terrain d’expérimentation pour intégrer les enjeux modernes (IA locale, sandboxing, supply-chain security).
+- un terrain d’expérimentation pour intégrer les enjeux modernes (IA locale, sandboxing, supply-chain ;
 
-Une question importante pour avancer :  
-Tu veux que ton projet soit plutôt un ensemble de scripts Bash simples, ou un framework plus avancé avec un installateur interactif (TUI/CLI) ?
+---
