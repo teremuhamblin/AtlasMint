@@ -70,12 +70,12 @@ Les menaces actuelles évoluent vite :
 - Script de sauvegarde automatisée (rsync, borg, restic)  
 
 ⚙️ Modules d’optimisation
-Selon ton usage, tu peux créer des profils :
+> Selon ton usage, tu peux créer des profils :
 
 🧑‍💻 Profil développeur
-- Installation Node.js, Python, Rust, Docker, Podman  
-- Configuration Git, SSH, clés GPG  
-- Installation d’éditeurs (VSCode, Neovim, JetBrains Toolbox)  
+- Installation `Node.js, Python, Rust, Docker, Podman`  
+- Configuration `Git, SSH, clés GPG`  
+- Installation d’éditeurs (`VSCode, Neovim, JetBrains Toolbox`)  
 
 🎬 Profil multimédia
 - Codecs complets  
